@@ -31,7 +31,7 @@ func (t T) Errorf(format string, args ...interface{}) {
 	if len(args) == 0 {
 		t.Error(format)
 	} else {
-		t.t.Error(t.tag(), fmt.Sprintf(format, args))
+		t.t.Error(t.tag(), fmt.Sprintf(format, args...))
 	}
 }
 
@@ -64,7 +64,7 @@ func (t T) Fatalf(format string, args ...interface{}) {
 	if len(args) == 0 {
 		t.Fatal(format)
 	} else {
-		t.t.Fatal(t.tag(), fmt.Sprintf(format, args))
+		t.t.Fatal(t.tag(), fmt.Sprintf(format, args...))
 	}
 }
 
@@ -80,7 +80,7 @@ func (t T) Logf(format string, args ...interface{}) {
 	if len(args) == 0 {
 		t.Log(format)
 	} else {
-		t.t.Log(t.tag(), fmt.Sprintf(format, args))
+		t.t.Log(t.tag(), fmt.Sprintf(format, args...))
 	}
 }
 
@@ -107,7 +107,7 @@ func (t T) Skipf(format string, args ...interface{}) {
 	if len(args) == 0 {
 		t.Skip(format)
 	} else {
-		t.t.Skip(t.tag(), fmt.Sprintf(format, args))
+		t.t.Skip(t.tag(), fmt.Sprintf(format, args...))
 	}
 }
 
